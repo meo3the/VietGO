@@ -18,7 +18,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends AppCompatActivity {
+public class BookingActivity extends AppCompatActivity {
     @BindView(R.id.spnStartPoint)
     Spinner spnStartPoint;
     @BindView(R.id.spnEndPoint)
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_booking);
         ButterKnife.bind(this);
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this.getApplicationContext(), R.array.pointArray, R.layout.simple_spinner_item);
         adapter1.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
