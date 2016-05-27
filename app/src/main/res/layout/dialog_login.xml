@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:padding="@dimen/dialog_content_margin">
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -41,23 +41,23 @@
         android:layout_height="wrap_content"
         android:gravity="end"
         android:orientation="horizontal"
-        android:padding="8dp">
+        android:padding="@dimen/dialog_button_margin">
 
         <Button
             android:id="@+id/btnRegister"
             style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
-            android:layout_height="38dp"
-            android:layout_marginRight="8dp"
-            android:minWidth="64dp"
+            android:layout_height="@dimen/flat_button_height"
+            android:layout_marginRight="@dimen/dialog_button_margin"
+            android:minWidth="@dimen/flat_button_min_width"
             android:text="register" />
 
         <Button
             android:id="@+id/btnLogin"
             style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="wrap_content"
-            android:layout_height="38dp"
-            android:minWidth="64dp"
+            android:layout_height="@dimen/flat_button_height"
+            android:minWidth="@dimen/flat_button_min_width"
             android:text="login" />
     </LinearLayout>
 </LinearLayout>
