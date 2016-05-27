@@ -29,6 +29,7 @@ public class BookingActivity extends AppCompatActivity {
     EditText etTime;
     @BindView(R.id.etStop)
     EditText etStop;
+    private int numberOfStop = 3;
 
 
     @Override
@@ -44,16 +45,16 @@ public class BookingActivity extends AppCompatActivity {
         spnEndPoint.setAdapter(adapter2);
     }
 
-    @OnClick({R.id.etDate, R.id.etTime})
+    @OnClick({R.id.etDate, R.id.etTime, R.id.etStop})
     public void onClick(View view) {
-        final Calendar c = Calendar.getInstance();
+        final Calendar c = Calendar.getInstance(); /** get the time */
         switch (view.getId()) {
             case R.id.etDate:
                 int mYear = c.get(Calendar.YEAR);
                 int mMonth = c.get(Calendar.MONTH);
                 int mDay = c.get(Calendar.DAY_OF_MONTH);
 
-
+                /** Launch Date picker dialog */
                 DatePickerDialog datePickerDialog = new DatePickerDialog(this,
                         new DatePickerDialog.OnDateSetListener() {
 
@@ -72,7 +73,7 @@ public class BookingActivity extends AppCompatActivity {
                 int mHour = c.get(Calendar.HOUR_OF_DAY);
                 int mMinute = c.get(Calendar.MINUTE);
 
-                // Launch Time Picker Dialog
+                /** Launch Time Picker Dialog */
                 TimePickerDialog timePickerDialog = new TimePickerDialog(this,
                         new TimePickerDialog.OnTimeSetListener() {
 
@@ -98,6 +99,12 @@ public class BookingActivity extends AppCompatActivity {
                     }
                 });
                 break;
+            case R.id.etStop:
+
+                etStop.setText("");
+                if (etStop.getText().toString() != "")
+                    numberOfStop = Integer.parseInt(etStop.getText().toString());
+                etStop.setText(numberOfStop + "");
         }
     }
 }
